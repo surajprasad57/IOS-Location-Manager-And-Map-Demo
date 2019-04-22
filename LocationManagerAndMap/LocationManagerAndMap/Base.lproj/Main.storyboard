@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LocationManagerAndMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D20-FM-2VD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="481"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="56q-er-Y9t"/>
+                                    <outletCollection property="gestureRecognizers" destination="OcJ-ZW-gxm" appends="YES" id="eB1-2W-GMm"/>
+                                </connections>
+                            </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wyl-Nr-NRk">
+                                <rect key="frame" x="0.0" y="543" width="414" height="229"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFI-mE-kXe">
+                                <rect key="frame" x="161" y="807" width="92" height="38"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="ZIN-61-Q1s"/>
+                                    <constraint firstAttribute="width" constant="92" id="v7O-m1-hwi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Choose Image">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseImageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="79Z-HG-Ylv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="D20-FM-2VD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="46b-yy-kgD"/>
+                            <constraint firstItem="FFI-mE-kXe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="161" id="75P-e4-aCE"/>
+                            <constraint firstItem="wyl-Nr-NRk" firstAttribute="trailing" secondItem="D20-FM-2VD" secondAttribute="trailing" id="8Wd-sQ-WIG"/>
+                            <constraint firstItem="wyl-Nr-NRk" firstAttribute="top" secondItem="D20-FM-2VD" secondAttribute="bottom" constant="18" id="M1O-qL-nc6"/>
+                            <constraint firstItem="D20-FM-2VD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OhM-8Y-TJl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="D20-FM-2VD" secondAttribute="bottom" constant="337" id="P8U-Y4-mx2"/>
+                            <constraint firstItem="FFI-mE-kXe" firstAttribute="top" secondItem="wyl-Nr-NRk" secondAttribute="bottom" constant="35" id="RZM-hH-cSN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FFI-mE-kXe" secondAttribute="bottom" constant="17" id="T9Y-7r-fp7"/>
+                            <constraint firstItem="FFI-mE-kXe" firstAttribute="top" secondItem="wyl-Nr-NRk" secondAttribute="bottom" constant="35" id="aNV-zI-Bjt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FFI-mE-kXe" secondAttribute="trailing" constant="161" id="akF-ci-Bvl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D20-FM-2VD" secondAttribute="trailing" id="c0w-L8-KFj"/>
+                            <constraint firstItem="wyl-Nr-NRk" firstAttribute="leading" secondItem="D20-FM-2VD" secondAttribute="leading" id="zYd-3D-ePl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="MapViewOutlet" destination="D20-FM-2VD" id="FTq-pJ-HMj"/>
+                        <outlet property="imageView" destination="wyl-Nr-NRk" id="NYw-U9-ieQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="OcJ-ZW-gxm">
+                    <connections>
+                        <action selector="tapGesture:" destination="BYZ-38-t0r" id="B7s-N8-6FK"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="133.33333333333334" y="127.23214285714285"/>
+        </scene>
+    </scenes>
+</document>
